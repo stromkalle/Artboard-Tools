@@ -508,11 +508,6 @@ var KOLOArtboardTools = {
             sorted_artboards.push(ab);
           }
         }
-
-        sorted_artboards.sort(function(a,b) {
-          return a.name.localeCompare(b.name);
-        });
-
         return sorted_artboards;
     }
   }
