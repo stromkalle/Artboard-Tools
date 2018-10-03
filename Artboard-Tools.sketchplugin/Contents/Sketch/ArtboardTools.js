@@ -10,8 +10,8 @@ var KOLOArtboardTools = {
     var start_x = 0;
     var start_y = 0;
 
-    var spacing_x = 128;
-    var spacing_y = 256;
+    var spacing_x = 100;
+    var spacing_y = 200;
     var spacing_group = Math.round(spacing_x / 2);
 
     var max_cols = 11;
@@ -48,7 +48,7 @@ var KOLOArtboardTools = {
       var ab = sorted_artboards[i];
       var artboard_name = [ab name];
 
-      var m = artboard_name.match(/^(.+)--([0-9]+)$/i);
+      var m = artboard_name.match(/^(.+)_([0-9]+)$/i);
 
       if ((m != null) && (group_related == true)) {
         var this_group = m[1];
@@ -65,7 +65,7 @@ var KOLOArtboardTools = {
 
         if ((i + 1) < sorted_artboards.length) {
           artboard_next_name = sorted_artboards[i+1].name();
-          var m_next = artboard_next_name.match(/^(.+)--([0-9]+)$/i);
+          var m_next = artboard_next_name.match(/^(.+)_([0-9]+)$/i);
           if (m_next != null) {
             if (m_next[1] == this_group) {
               up_counts = false;
@@ -119,8 +119,8 @@ var KOLOArtboardTools = {
     var start_x = 0;
     var start_y = 0;
 
-    var spacing_x = 128;
-    var spacing_y = 128;
+    var spacing_x = 100;
+    var spacing_y = 100;
     var spacing_group = Math.round(spacing_x / 2);
 
     // Main junk, don't tread on me
@@ -131,7 +131,7 @@ var KOLOArtboardTools = {
     if (use_slashes) {
       var regexp_patt = /^(.+)\/.+/i;
     } else {
-      var regexp_patt = /^(.+)--.+/i;
+      var regexp_patt = /^(.+)_.+/i;
     }
 
     var doc = context.document;
@@ -225,7 +225,7 @@ var KOLOArtboardTools = {
       if (use_slashes) {
         [app displayDialog:"Canceling. No artboard names contain “/”" withTitle:"Group Artboards"];
       } else {
-        [app displayDialog:"Canceling. No artboard names contain “--”" withTitle:"Group Artboards"];
+        [app displayDialog:"Canceling. No artboard names contain “_”" withTitle:"Group Artboards"];
       }
     }
   },
@@ -237,8 +237,8 @@ var KOLOArtboardTools = {
     var start_x = 0;
     var start_y = 0;
 
-    var spacing_x = 128;
-    var spacing_y = 128;
+    var spacing_x = 100;
+    var spacing_y = 100;
     var spacing_group = Math.round(spacing_x / 2);
 
     // Main junk, don't tread on me
@@ -249,7 +249,7 @@ var KOLOArtboardTools = {
     if (use_slashes) {
       var regexp_patt = /^(.+)\/.+/i;
     } else {
-      var regexp_patt = /^(.+)--.+/i;
+      var regexp_patt = /^(.+)_.+/i;
     }
 
     var doc = context.document;
@@ -408,7 +408,7 @@ var KOLOArtboardTools = {
       while ([selected_artboard parentGroup] != page) {
         selected_artboard = [selected_artboard parentGroup];
       }
-  
+
       var selected_artboard_name = [selected_artboard name];
 
       var selected_index = -1;
@@ -461,7 +461,7 @@ var KOLOArtboardTools = {
       while ([selected_artboard parentGroup] != page) {
         selected_artboard = [selected_artboard parentGroup];
       }
-  
+
       var selected_artboard_name = [selected_artboard name];
       var selected_index = -1;
 

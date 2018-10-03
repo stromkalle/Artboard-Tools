@@ -63,7 +63,7 @@
       "902_select_next_artboard",
       "999_reverse_artboards_order"
     ],
-    "title" : "Artboard Tools"
+    "title" : "KallesMagiskaPastaSauce"
   },
   "homepage" : "https://github.com/frankko/Artboard-Tools",
   "identifier" : "io.kolo.sketch.artboard-tools",
@@ -71,5 +71,5 @@
   "version" : "3.50.0",
   "description" : "Plugins for arranging artboards and navigating between artboards.",
   "authorEmail" : "frank@kolo.io",
-  "name" : "Artboard Tools"
+  "name" : "KallesMagiskaPastaSauce"
 }
